@@ -1,4 +1,5 @@
-import 'package:bill_app/src/modules/home/pages/home.page.dart';
+import 'package:bill_app/src/modules/achievement/screens/achievement.screen.dart';
+import 'package:bill_app/src/modules/home/screens/home.screen.dart';
 import 'package:flutter/material.dart';
 
 class AppWidget extends StatelessWidget {
@@ -9,11 +10,15 @@ class AppWidget extends StatelessWidget {
     return MaterialApp(
       title: 'Bill APP',
       debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const HomeScreen(),
+        '/achievement': (context) => const AchievementScreen(),
+      },
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.lime),
         useMaterial3: true,
       ),
-      home: const HomePage(),
     );
   }
 }
